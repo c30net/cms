@@ -16,8 +16,8 @@
 						WELCOME TO ADMIN
 						<small>Author Name</small>
 					</h1>
-                    <div class="col-xs-6">
-					<?php insert_categories(); ?>
+					<div class="col-xs-6">
+						<?php insert_categories(); ?>
 
 
 						<!--  start : form for adding category  -->
@@ -31,42 +31,17 @@
 							</div>
 						</form>
 						<!--  end : form for adding category  -->
-
-
-
-
-
-
-
-
 						<!--  start : form for editing category  -->
 
 
-                        <?php
-                        if (isset($_GET['edit'])) {
-                            $cat_id = $_GET['edit'];
-                            include_once 'admin_includes/update_categories.php';
-                        }
-                        ?>
-
-
-
-
-						<!--  end : form for editing category -->
+						<?php
+						if (isset($_GET['edit'])) {
+							$cat_id = $_GET['edit'];
+							include_once 'admin_includes/update_categories.php';
+						}
+						?>
+					<!--  end : form for editing category -->
 					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 					<!--  start :  a table to show categories as content -->
 
 					<div class="col-xs-6">

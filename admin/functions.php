@@ -1,5 +1,14 @@
 <?php
 
+function confirmQuery($result)
+{   global $connection;
+    if(!$result)
+    {
+        die('Query Failed '. mysqli_error($connection));
+    }
+}
+
+
 function insert_categories(){
     global $connection;
     if (isset($_POST['submit'])) {
@@ -7,13 +16,9 @@ function insert_categories(){
         if ($cat_title == '' || empty($cat_title)) {
             echo '<h1>This field should not be empty</h1>';
         } else {
-            $query
-                = "INSERT INTO categories (cat_title) VALUE ('$cat_title')";
+            $query = "INSERT INTO categories (cat_title) VALUE ('$cat_title')";
 
-            $create_category_query = mysqli_query(
-                $connection,
-                $query
-            );
+            $create_category_query = mysqli_query($connection, $query);
 
 
             if (!$create_category_query) {
@@ -26,16 +31,16 @@ function insert_categories(){
 
 function findAllCategories(){
     global $connection;
-    $query             = "SELECT * FROM categories";
-    $select_categories = mysqli_query(
-        $connection,
-        $query
-    );
+    $query = "SELECT * FROM categories";
+    $select_categories = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_categories)) {
+        $cat_id = $row['cat_id'];
+        $cat_title = $row['cat_title'];
+
         echo "<tr>
-                <td>{$row['cat_id']}</td>
-                <td>{$row['cat_title']}</td>
+                <td>{$cat_id}</td>
+                <td>{$cat_title}</td>
                 <td><a href='categories.php?delete={$row['cat_id']}' >DELETE</a></td>
                 <td><a href='categories.php?edit={$row['cat_id']}' >Edit</a></td>
                 </tr>";
