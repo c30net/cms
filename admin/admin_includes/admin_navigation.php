@@ -73,7 +73,7 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
 			<li>
-				<a href="index.html"><i class="fa fa-fw fa-dashboard"></i>
+				<a href="index.php"><i class="fa fa-fw fa-dashboard"></i>
 					Dashboard
                 </a>
 			</li>
@@ -96,8 +96,8 @@
               class="fa fa-fw fa-wrench"></i> Categories</a>
 			</li>
 
-			<li class="active">
-				<a href="blank-page.html"><i class="fa fa-fw fa-file"></i>Comments</a>
+			<li>
+				<a href="comments.php"><i class="fa fa-fw fa-file"></i>Comments</a>
 			</li>
 				<li>
 				<a href="javascript:;" data-toggle="collapse"

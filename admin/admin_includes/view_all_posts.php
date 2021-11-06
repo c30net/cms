@@ -39,9 +39,11 @@ if (isset($_GET['delete']) && $connection) {
 
             $query = "SELECT * FROM `categories` WHERE `cat_id` =  '$post_category_id'";
             $queryToShowCategoryTitle = mysqli_query($connection, $query);
-            $row = mysqli_fetch_assoc(@$queryToShowCategoryTitle);
+            $row = mysqli_fetch_assoc($queryToShowCategoryTitle);
             $cat_id = $row['cat_id'];
             $cat_title = $row['cat_title'];
+
+
 
 
             echo "<tr>

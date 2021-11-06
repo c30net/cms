@@ -15,26 +15,30 @@ include_once 'includes/navigation.php'; ?>
 		<div class="col-md-8">
 
 			<?php
-			$query = "SELECT * FROM `posts` WHERE `post_status` = 'published' ";
-			$select_all_posts_query = mysqli_query($connection, $query);
-			while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
-				$post_title         = $row['post_title'];
-				$post_id            = $row['post_id'];
-				//$post_category_id   = $row['post_category_id'];
-				$post_author        = $row['post_author'];
-				$post_date          = $row['post_date'];
-				$post_image         = $row['post_image'];
-				$post_content       = $row['post_content'];
-				//$post_tags          = $row['post_tags'];
-				//$post_comment_count = $row['post_comment_count'];
-				//$post_status        = $row['post_status'];
+            if(isset($_GET['category']))
+            {
+                $category_id = $_GET['category'];
+                $query = "SELECT * FROM posts WHERE `post_category_id` = '$category_id'";
+                $select_all_posts_query = mysqli_query($connection, $query);
+                while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
+                    $post_title         = $row['post_title'];
+                    $post_id            = $row['post_id'];
+                    //$post_category_id   = $row['post_category_id'];
+                    $post_author        = $row['post_author'];
+                    $post_date          = $row['post_date'];
+                    $post_image         = $row['post_image'];
+                    $post_content       = $row['post_content'];
+                    //$post_tags          = $row['post_tags'];
+                    //$post_comment_count = $row['post_comment_count'];
+                    //$post_status        = $row['post_status'];
 
-				$row['post_title'];
+
+                    $row['post_title'];
 
 //                truncate post content
-                $post_content_truncated = substr($post_content, 0, 100);
+                    $post_content_truncated = substr($post_content, 0, 100);
 
-				echo "<h1 class='page-header'>
+                    echo "<h1 class='page-header'>
                 Page Heading
                 <small>Secondary Text</small>
             </h1>
@@ -55,7 +59,8 @@ include_once 'includes/navigation.php'; ?>
             <a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
 
             <hr>";
-			}
+                }
+            }
 			?>
 
 			<!-- Pager -->

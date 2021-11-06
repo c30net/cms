@@ -26,17 +26,15 @@
 				<ul class="list-unstyled">
 
 					<?php
-						$query                     = "SELECT * FROM categories";
-						$select_categories_sidebar = mysqli_query(
-							$connection, $query
-						);
+						$query = "SELECT * FROM categories";
+						$select_categories_sidebar = mysqli_query($connection, $query);
 
-						while ($row = mysqli_fetch_assoc(
-							$select_categories_sidebar
-						))
+						while ($row = mysqli_fetch_assoc( $select_categories_sidebar))
 						{
-							echo "<li><a href='#'>".$row['cat_title']
-								."</a></li>";
+                            $cat_id = $row['cat_id'];
+                            $cat_title = $row['cat_title'];
+
+							echo "<li><a href='category.php?category=".$cat_id."'>".$cat_title."</a></li>";
 						};
 					?>
 

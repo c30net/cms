@@ -42,7 +42,7 @@
 
 
                         default:
-                            include_once 'admin_includes/view_all_posts.php';
+                            include_once 'admin_includes/view_all_comments.php';
                     }
                     ?>
                 </div>
