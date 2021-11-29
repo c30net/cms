@@ -1,7 +1,20 @@
 <?php
 	ob_start();
+    session_start();
 	include_once '../includes/db.php';
     include_once 'functions.php';
+
+
+    if(empty($_SESSION['user_role'])){
+        header('location: ../index.php');
+    }
+
+    if(!empty($_SESSION['user_role']) && isset($_SESSION['user_role'])){
+        if($_SESSION['user_role'] !== 'administrator'){
+            header('Location: ../index.php');
+        }
+    }
+
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +47,7 @@
 	<script
       src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>

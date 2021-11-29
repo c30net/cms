@@ -18,40 +18,6 @@
 
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle"
-          data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-			<ul class="dropdown-menu alert-dropdown">
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-default">Alert Badge</span></a>
-				</li>
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-primary">Alert Badge</span></a>
-				</li>
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-success">Alert Badge</span></a>
-				</li>
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-info">Alert Badge</span></a>
-				</li>
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-warning">Alert Badge</span></a>
-				</li>
-				<li>
-					<a href="#">Alert Name <span
-                class="label label-danger">Alert Badge</span></a>
-				</li>
-				<li class="divider"></li>
-				<li>
-					<a href="#">View All</a>
-				</li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle"
           data-toggle="dropdown"><i
             class="fa fa-user"></i> John Smith <b
             class="caret"></b></a>
@@ -62,9 +28,7 @@
 
 				<li class="divider"></li>
 				<li>
-					<a href="#"><i class="fa fa-fw fa-power-off"></i>
-						Log
-						Out</a>
+					<a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
 				</li>
 			</ul>
 		</li>
@@ -104,15 +68,15 @@
             data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
-						<a href="#">Dropdown Item</a>
+						<a href="users.php">View All Users</a>
 					</li>
 					<li>
-						<a href="#">Dropdown Item</a>
+						<a href="users.php?source=add_user">Add User</a>
 					</li>
 				</ul>
 			</li>
       <li>
-					<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+					<a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
       </li>
 		</ul>
 	</div>
