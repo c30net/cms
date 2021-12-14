@@ -51,6 +51,15 @@ if (isset($_POST['edit_post'])) {
 
     $create_edit_query = mysqli_query($connection, $edit_query);
     confirmQuery($create_edit_query);
+    if($create_edit_query){
+        echo '<div class="alert alert-success alert-dismissible" role="alert">';
+        echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        echo '<h4 class="alert alert-warning">Post Data Updated Successfully</h4>';
+        echo '<h4 class="alert alert-info">see  <a href="../post.php?p_id='.$post_id.'">the post</a> updated  </h4>';
+        echo '<h4 class="alert alert-warning">see  other <a href="./posts.php">posts</a> to update them</h4>';
+        echo '</div>';
+    }
+
 }
 
 ?>
@@ -83,10 +92,26 @@ if (isset($_POST['edit_post'])) {
 
         </select>
     </div>
+
+
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input type="text" class="form-control" name="post_status" value='<?php echo $post_status;  ?>'>
+        <label for="post_status">Post Status</label><br>
+        <select name="post_status" id="user_role">
+            <option value="<?php echo $post_status;  ?>"><?php echo ucfirst($post_status);  ?></option>
+            <?php
+            if($post_status === 'published'){
+                echo "<option value='drafted'>Drafted</option>";
+            } else {
+                echo "<option value='published'>Published</option>";
+            }
+            ?>
+        </select>
     </div>
+
+
+
+
+
     <div class="form-group">
         <label for="post_image">Post Image</label><br><input type="file" name="image"><br>
         <img width="100px" src="./../images/<?php echo $post_image;  ?>" alt="">

@@ -17,8 +17,13 @@ if(isset($_POST['create_user']))
     $query_add_user = mysqli_query($connection, $query_user);
 
     confirmQuery($query_add_user);
+    if($query_add_user){
+        echo '<h1 id="used" class="alert alert-success" role="alert">User Added Successfully</h1>';
+    }
 }
+
 ?>
+<span></span>
 <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="username ">Username</label>
@@ -56,6 +61,6 @@ if(isset($_POST['create_user']))
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="create_user" value="Add User">
+        <input  class="btn btn-primary" type="submit" name="create_user" value="Add User">
     </div>
 </form>
